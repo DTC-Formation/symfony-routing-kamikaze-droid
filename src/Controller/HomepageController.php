@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,6 +21,7 @@ class HomepageController extends AbstractController
         $nombre_b = $request->get('nombre-b') ; 
         $signe = $request->get('signe') ; 
         
+        if (isset($signe)) {
         switch ($signe) 
         { 
         case '+' :
@@ -38,10 +38,12 @@ class HomepageController extends AbstractController
         default : 
         $value ="Veuiller entrer une signe" ;     
      }   
-
-
+    }
+     $_SESSION['res']=$value ; 
+     
         return $this->render('homepage/index.html.twig', [
-            'value' => $value 
+            'value' => $value,
+            'session' => $_SESSION['res'] 
         ]);
     }
 }
