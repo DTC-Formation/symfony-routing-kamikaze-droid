@@ -2,7 +2,6 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 resultat:
-  path: /resultat 
-  defaults:
-    _controller: FrameworkBundle:Template:template
-    template: index.html.twig
+    path: /resultat
+    controller: App\Controller\ResultatController::index 
+  

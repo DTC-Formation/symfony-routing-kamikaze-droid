@@ -3,15 +3,14 @@
 
     <h2> Page de contact </h2>
 
-    <form>
+    <form action="{{ path('resultat')}}" >
         <input type="text" name="nombre-a">
         <input type="text" name="signe">
         <input type="text" name="nombre-b">
-        <a href="{{ path('resultat')}}">      
-          <input type="submit">a
-    </a>
+        <input type="submit">
     </form>
 {% endblock%}
+
 
 
 

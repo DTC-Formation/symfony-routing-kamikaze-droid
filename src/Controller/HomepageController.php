@@ -13,37 +13,11 @@ class HomepageController extends AbstractController
      * 
      * 
      */
-    public function index(Request $request ): Response
-    {
-      
-        $value = 0 ; 
-        $nombre_a = $request->get('nombre-a') ; 
-        $nombre_b = $request->get('nombre-b') ; 
-        $signe = $request->get('signe') ; 
-        
-        if (isset($signe)) {
-        switch ($signe) 
-        { 
-        case '+' :
-        $value = $nombre_a + $nombre_b ;
-        break ;
-        case '-' : 
-        $value = $nombre_a - $nombre_b ;
-        break ; 
-        case '/' :
-        $value = $nombre_a / $nombre_b ; 
-        break ;
-        case '*':   
-            $value = $nombre_a * $nombre_b ;  
-        default : 
-        $value ="Veuiller entrer une signe" ;     
-     }   
-    }
-     $_SESSION['res']=$value ; 
+    public function index(): Response {
      
-        return $this->render('homepage/index.html.twig', [
-            'value' => $value,
-            'session' => $_SESSION['res'] 
-        ]);
+    
+
+        return $this->render('homepage/index.html.twig');
     }
+
 }
